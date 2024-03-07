@@ -16,12 +16,13 @@
   // Método para cargar los conciertos al montar el componente
   const loadConcerts = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/concerts/');
+      const response = await fetch('http://127.0.0.1:8000/api/concerts');
       if (!response.ok) {
         throw new Error('Error al cargar los conciertos');
       }
       // Actualiza el valor de concerts con los datos de la respuesta
       concerts.value = await response.json();
+      concerts.value = concerts.value.data;
     } catch (error) {
       console.error(error);
     }
