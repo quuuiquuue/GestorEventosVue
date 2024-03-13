@@ -15,6 +15,8 @@
   flex-wrap: wrap; /* Para que los elementos se envuelvan a una nueva línea si no hay suficiente espacio */
   gap: 20px; /* Espaciado entre las tarjetas de conciertos */
   padding: 10px;
+  text-align: center;
+  
 }
 
 

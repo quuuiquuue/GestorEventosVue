@@ -1,4 +1,5 @@
-<template>
+  <template>
+    <NavBar/>
     <ConcertDetail/>
   </template>
   
@@ -6,6 +7,7 @@
   import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
   import ConcertDetail from '@/components/Concert/ConcertDetail.vue';
+  import NavBar from '@/components/Gadgets/NavBar.vue';
   
   const router = useRouter();
   const concertId = ref(router.currentRoute.value.params.id);
