@@ -10,6 +10,11 @@
 </template>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   width: 100%;
   background-color: #333;
