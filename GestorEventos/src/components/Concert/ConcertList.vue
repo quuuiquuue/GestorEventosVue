@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="div_concert">
     <h2>Conciertos Disponibles</h2>
     <div class="concert-list">
-      <div v-for="concert in concerts" :key="concert.id" class="concert-card" @click="goToConcertDetail(concert)">
+      <div v-for="concert in concerts" :key="concert.id" class="concert-card shadow" @click="goToConcertDetail(concert)">
         <img :src="concert.poster" alt="poster_concert" class="concert-image">
+        <h4> {{ concert.title }}</h4>
         <p><strong>Artista:</strong> {{ concert.artist }}</p>
         <p><strong>Fecha:</strong> {{ concert.date }}</p>
         <p><strong>Ubicación:</strong> {{ concert.location }}</p>
