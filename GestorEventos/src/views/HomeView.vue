@@ -15,6 +15,9 @@ import Users from '@/components/Users/Users.vue';
 </template>
 
 <style>
- width: 100%;
+body{
+  width: 100%;
  margin: 0 auto;
+}
+
 </style>
