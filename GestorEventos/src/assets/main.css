@@ -21,7 +21,7 @@
   gap: 20px;
   /* Espaciado entre las tarjetas de conciertos */
   padding: 10px;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   animation: scroll 30s linear infinite; /* Anima el desplazamiento horizontal */
 

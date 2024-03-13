@@ -4,12 +4,10 @@
     <div class="concert-list">
       <div v-for="concert in concerts" :key="concert.id" class="concert-card shadow" @click="goToConcertDetail(concert)">
         <img :src="concert.poster" alt="poster_concert" class="concert-image">
-        <h4> {{ concert.title }}</h4>
-        <p><strong>Artista:</strong> {{ concert.artist }}</p>
-        <p><strong>Fecha:</strong> {{ concert.date }}</p>
-        <p><strong>Ubicación:</strong> {{ concert.location }}</p>
-        <p><strong>Precio de la entrada:</strong> {{ concert.ticketPrice }}</p>
-        <p><strong>Entradas disponibles:</strong> {{ concert.ticketsAvailable }}</p>
+        <h4>{{ concert.title }}</h4>
+        <p>{{ concert.date }}</p>
+        <p>{{ concert.location }}</p>
+        <p>{{ concert.ticketPrice }} €</p>
       </div>
     </div>
   </div>
