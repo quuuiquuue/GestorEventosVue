@@ -28,11 +28,16 @@
 
 .concert-image {
   width: 100%; /* Ocupa todo el ancho de la tarjeta */
-  height: 200px; /* Establece una altura fija para todas las imágenes */
+  height: 250px; /* Establece una altura fija para todas las imágenes */
   object-fit: cover; /* Ajusta la imagen para que cubra todo el espacio, manteniendo las proporciones */
   border-radius: 5px;
 }
 
 .concert-card p {
   margin: 5px 0;
+}
+
+.concert-details {
+  padding: 10px;
+  background-color: #f0f0f0;
 }
