@@ -25,6 +25,7 @@ const ticketPurchased = ref(false);
 
 const loadConcertDetail = async () => {
   try {
+    const concertId = router.params.id;
     const response = await fetch(`http://127.0.0.1:8000/api/concerts/${concertId.value}`);
     if (!response.ok) {
       throw new Error('Error al cargar los detalles del concierto');
@@ -36,6 +37,7 @@ const loadConcertDetail = async () => {
     error.value = 'No se pudieron cargar los detalles del concierto';
   }
 };
+
 
 const buyTicket = async () => {
   try {
