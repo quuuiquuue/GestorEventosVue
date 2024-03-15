@@ -32,29 +32,7 @@
 
   
   
-  
-  const buyTicket = async () => {
-    try {
-      const response = await fetch(`http://127.0.0.1:8000/api/ticket-purchases`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Añade cualquier otra cabecera necesaria, como el token de autenticación si es necesario
-        },
-        body: JSON.stringify({
-          concertId: concertId.value,
-          // Puedes enviar más datos si es necesario, como el ID del usuario
-        }),
-      });
-      if (!response.ok) {
-        throw new Error('Error al comprar el ticket');
-      }
-      ticketPurchased.value = true;
-    } catch (error) {
-      console.error(error);
-      error.value = 'No se pudo comprar el ticket';
-    }
-  };
+
   
   onMounted(loadConcertDetail);
   </script>
