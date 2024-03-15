@@ -1,6 +1,6 @@
 <template>
   <div class="div_concert">
-    <h2>Conciertos Disponibles</h2>
+    <h2 class="kode-mono">Conciertos Disponibles</h2>
     <div class="concert-list">
       <div v-for="concert in concerts" :key="concert.id" class="concert-card shadow" @click="goToConcertDetail(concert)">
         <img :src="concert.poster" alt="poster_concert" class="concert-image">

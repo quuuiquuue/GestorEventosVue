@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- Navbar -->
-    <nav>
+    <nav >
       <div class="wrapper">
-        <div class="logo"><a href="/">GestorEventos</a></div>
+        <div class="logo"><a href="/"><img src="/logo-web.png" alt="logo_image" style="width: 30%; padding-top:3%;"></a></div>
         <input type="radio" name="slider" id="menu-btn">
         <input type="radio" name="slider" id="close-btn">
         <ul class="nav-links">
@@ -51,10 +51,13 @@ body {
   margin: 0;
   padding: 0;
 }
+nav {
+  padding: 10px;
+}
 
 .navbar {
   width: 100%;
-  background-color: #333;
+  background-color: white;
   top: 0;
   z-index: 1000;
 }
@@ -71,7 +74,7 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -90,7 +93,7 @@ body {
 
 .search-modal-content {
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
 }
 
@@ -101,9 +104,10 @@ body {
 }
 
 .search-box input {
-  width: 300px;
+  width: 400px;
   padding: 10px;
   margin-right: 10px;
+  border-radius: 10px;
 }
 
 .btn {

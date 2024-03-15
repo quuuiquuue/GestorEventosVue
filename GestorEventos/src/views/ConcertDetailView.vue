@@ -29,6 +29,8 @@
       error.value = 'No se pudieron cargar los detalles del concierto';
     }
   };
+
+  
   
   
   const buyTicket = async () => {

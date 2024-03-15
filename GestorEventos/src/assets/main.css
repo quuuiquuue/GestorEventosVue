@@ -1,13 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap');
+
 #app {
   width: 100%;
   height: 100vh;
   /* Establece la altura al 100% del viewport height */
   margin: 0;
-  padding: 0;
-
+  padding: 0 20px;
   /* Agrega otros estilos según sea necesario */
+  /* Oculta la barra de desplazamiento horizontal */
+  overflow-x: hidden;
 }
 
+.kode-mono{
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.protest-strike-regular {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  
+}
+
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 .div_concert {
   text-align: left;
   overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
@@ -38,7 +62,9 @@
 
 
 .concert-card {
-  width: calc(15% - 20px);
+  flex-shrink: 0; /* Evita que la tarjeta se reduzca en tamaño */
+  width: 250px;
+  height: 460px;
   /* 25% del ancho del contenedor menos el espaciado entre las tarjetas */
   padding: 10px;
   /* Espaciado interno de la tarjeta */
@@ -82,7 +108,7 @@ nav{
   z-index: 99;
   width: 100%;
   
-  background: #242526;
+  background: white;
 }
 nav .wrapper{
   position: relative;
@@ -96,7 +122,7 @@ nav .wrapper{
   justify-content: space-between;
 }
 .wrapper .logo a{
-  color: #f2f2f2;
+  color: black;
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -108,7 +134,7 @@ nav .wrapper{
   list-style: none;
 }
 .nav-links li a{
-  color: #f2f2f2;
+  color: black;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -117,7 +143,7 @@ nav .wrapper{
   transition: all 0.3s ease;
 }
 .nav-links li a:hover{
-  background: #3A3B3C;
+  background: rgb(182, 182, 182);
 }
 .nav-links .mobile-item{
   display: none;
