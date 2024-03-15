@@ -1,69 +1,50 @@
 <template>
-<nav>
-  <div class="wrapper">
-    <div class="logo"><a href="/">GestorEventos</a></div>
-    <input type="radio" name="slider" id="menu-btn">
-    <input type="radio" name="slider" id="close-btn">
-    <ul class="nav-links">
-      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-      <li><a href="/">Home</a></li>
-      <li><a href="#">Sobre Nosotros</a></li>
-      <li>
-        <a href="#" class="desktop-item">Dropdown Menu</a>
-        <input type="checkbox" id="showDrop">
-        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
-        <ul class="drop-menu">
-          <li><a href="#">Drop menu 1</a></li>
-          <li><a href="#">Drop menu 2</a></li>
-          <li><a href="#">Drop menu 3</a></li>
-          <li><a href="#">Drop menu 4</a></li>
+  <div>
+    <!-- Navbar -->
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="/">GestorEventos</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Explorar Eventos</a></li>
+          <li><a href="#">Iniciar Sesion</a></li>
+          <li><button @click="openSearchModal">Buscar</button></li>
         </ul>
-      </li>
-      <li>
-        <a href="#" class="desktop-item">Mega Menu</a>
-        <input type="checkbox" id="showMega">
-        <label for="showMega" class="mobile-item">Mega Menu</label>
-        <div class="mega-box">
-          <div class="content">
-            <div class="row">
-              <img src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg" alt="">
-            </div>
-            <div class="row">
-              <header>Design Services</header>
-              <ul class="mega-links">
-                <li><a href="#">Graphics</a></li>
-                <li><a href="#">Vectors</a></li>
-                <li><a href="#">Business cards</a></li>
-                <li><a href="#">Custom logo</a></li>
-              </ul>
-            </div>
-            <div class="row">
-              <header>Email Services</header>
-              <ul class="mega-links">
-                <li><a href="#">Personal Email</a></li>
-                <li><a href="#">Business Email</a></li>
-                <li><a href="#">Mobile Email</a></li>
-                <li><a href="#">Web Marketing</a></li>
-              </ul>
-            </div>
-            <div class="row">
-              <header>Security services</header>
-              <ul class="mega-links">
-                <li><a href="#">Site Seal</a></li>
-                <li><a href="#">VPS Hosting</a></li>
-                <li><a href="#">Privacy Seal</a></li>
-                <li><a href="#">Website design</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li><a href="#">Feedback</a></li>
-    </ul>
-    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+    <div>
+    
+    <!-- Modal del buscador -->
+    <div class="search-modal" v-if="showSearch" @click.self="closeSearchModal">
+      <!-- Contenido del modal del buscador -->
+      <div class="search-modal-content">
+        <!-- Aquí va el contenido del buscador -->
+        <input type="text" placeholder="Busca tu evento">
+      </div>
+    </div>
   </div>
-</nav>
+  </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const showSearch = ref(false);
+
+// Función para mostrar el modal del buscador
+const openSearchModal = () => {
+  showSearch.value = true;
+};
+
+// Función para cerrar el modal del buscador
+const closeSearchModal = () => {
+  showSearch.value = false;
+};
+</script>
 
 <style>
 body {
@@ -74,8 +55,8 @@ body {
 .navbar {
   width: 100%;
   background-color: #333;
-  top: 0; /* Sitúa la barra de navegación en la parte superior */
-  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -92,5 +73,47 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
+}
+
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  z-index: 10000; /* Z-index alto para que esté por encima de otros elementos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.close-search {
+  margin-left: 10px;
 }
 </style>
