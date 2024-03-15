@@ -1,6 +1,7 @@
   <template>
     <NavBar/>
     <ConcertDetail/>
+    <Footer/>
   </template>
   
   <script setup>
@@ -8,6 +9,7 @@
   import { useRouter } from 'vue-router';
   import ConcertDetail from '@/components/Concert/ConcertDetail.vue';
   import NavBar from '@/components/Gadgets/NavBar.vue';
+  import Footer from '@/components/Gadgets/Footer.vue';
   
   const router = useRouter();
   const concertId = ref(router.currentRoute.value.params.id);

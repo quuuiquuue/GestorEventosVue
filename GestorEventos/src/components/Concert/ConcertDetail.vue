@@ -16,8 +16,10 @@
         <p v-if="ticketPurchased">¡Entrada comprada con éxito!</p>
         <p v-if="error">{{ error }}</p>
         </div>
+        <hr>
+        <h4 style="font-size: 25px;">Informacion</h4>
         <p><strong>Artista:</strong> {{ concert.artist }}</p>
-        <p><strong>Precio de la entrada:</strong> {{ concert.ticketPrice }}</p>
+        <p>{{ concert.description}}</p>
         <p><strong>Entradas disponibles:</strong> {{ concert.ticketsAvailable }}</p>
 
       </div>
