@@ -9,7 +9,7 @@
         <ul class="nav-links">
           <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
           <li><a href="/">Home</a></li>
-          <li><a href="#">Explorar Eventos</a></li>
+          <li><a href="/concerts">Explorar Eventos</a></li>
           <li><a href="#">Iniciar Sesion</a></li>
           <li><button @click="openSearchModal">Buscar</button></li>
         </ul>

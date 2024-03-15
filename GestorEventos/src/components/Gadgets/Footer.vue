@@ -7,7 +7,7 @@
         <div class="links">
           <h4>Enlaces Rápidos</h4>
           <p><a href="/">Home</a></p>
-          <p><a href="#">Explorar Eventos</a></p>
+          <p><a href="/concerts">Explorar Eventos</a></p>
           <p><a href="#">Blogs</a></p>
           <p><a href="#">Contact</a></p>
         </div>

@@ -134,6 +134,7 @@ const buyTicket = async () => {
 }
 
 .boton-compra:hover {
-  background-color: rgb(150, 149, 149);
+  background-color: black;
+  color: white;
 }
 </style>
