@@ -1,18 +1,15 @@
 <template>
     <NavBar />
     <div class="concerts-view">
-        <h1>Explorar Eventos</h1>
+        <h2 class="kode-mono">Explorar Eventos</h2>
         <div v-if="loading">Cargando conciertos...</div>
         <div v-else class="concerts-grid">
             <div v-for="concert in concerts" :key="concert.id" class="concert-card" @click="goToConcertDetail(concert)">
                 <img :src="concert.poster" :alt="concert.title" class="concert-image">
                 <div class="concert-details">
                     <h2>{{ concert.title }}</h2>
-                    <p>{{ concert.artist }}</p>
                     <p>{{ concert.date }}</p>
                     <p>{{ concert.location }}</p>
-                    <p>{{ concert.ticketPrice }}</p>
-                    <p>{{ concert.ticketsAvailable }}</p>
                     <p>Desde {{ concert.ticketPrice }} €</p>
                 </div>
             </div>
