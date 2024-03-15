@@ -3,7 +3,7 @@
       <img src="/fondo-nuestros-eventos.avif" alt="fondo_eventos" class="jumboFooter">
       <div class="text-overlay">
         <h1 class="protest-strike-regular" style="font-size: 110px;">¿Estás buscando un evento? <br> Podemos ayudarte</h1>
-        <a href="#" class="custom-button">Nuestros eventos</a>
+        <a href="/concerts" class="custom-button">Nuestros eventos</a>
       </div>
     </div>
   </template>
