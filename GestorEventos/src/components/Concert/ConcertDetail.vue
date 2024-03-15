@@ -1,16 +1,29 @@
 <template>
-  <div v-if="concert">
-    <h2>{{ concert.title }}</h2>
-    <p><strong>Artista:</strong> {{ concert.artist }}</p>
-    <p><strong>Fecha:</strong> {{ concert.date }}</p>
-    <p><strong>Ubicación:</strong> {{ concert.location }}</p>
-    <p><strong>Precio de la entrada:</strong> {{ concert.ticketPrice }}</p>
-    <p><strong>Entradas disponibles:</strong> {{ concert.ticketsAvailable }}</p>
-    <button @click="buyTicket" :disabled="ticketPurchased">Comprar Entrada</button>
-    <p v-if="ticketPurchased">¡Entrada comprada con éxito!</p>
-    <p v-if="error">{{ error }}</p>
+  <div class="centered-content">
+    <div v-if="concert" class="concert-details">
+      <div class="concert-image-container">
+        <img :src="concert.poster" alt="poster_concert" class="concert-image">
+        <h3 class="security kode-mono" style="font-size: 15px;">TicketStore protege a fans y artistas <br> de la reventa ilegal. Tus entradas se <br> guardarán de forma segura en la app.</h3>
+      </div>
+      <div class="concert-info">
+        <h2 style="font-size: 60px;">{{ concert.title }}</h2>
+        <h4 style="font-size: 25px;"> {{ concert.location }}</h4>
+        <h4 style="font-size: 25px;">{{ concert.date }}</h4>
+        <div class="concert-buyTicket">
+        <span style="font-size: 25px; font-weight: bold;">{{ concert.ticketPrice }} €</span>
+        <small class="kode-mono">Este es el precio que pagarás. Sin sorpresas de última hora.</small>
+        <button class="boton-compra" @click="buyTicket" :disabled="ticketPurchased">Comprar</button>
+        <p v-if="ticketPurchased">¡Entrada comprada con éxito!</p>
+        <p v-if="error">{{ error }}</p>
+        </div>
+        <p><strong>Artista:</strong> {{ concert.artist }}</p>
+        <p><strong>Precio de la entrada:</strong> {{ concert.ticketPrice }}</p>
+        <p><strong>Entradas disponibles:</strong> {{ concert.ticketsAvailable }}</p>
+
+      </div>
+    </div>
+    <p v-else>Cargando detalles del concierto...</p>
   </div>
-  <p v-else>Cargando detalles del concierto...</p>
 </template>
 
 <script setup>
@@ -63,3 +76,62 @@ const buyTicket = async () => {
     }
   };
 </script>
+
+<style scoped>
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Establece la altura al 100% del viewport */
+  max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  
+}
+
+.concert-details {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.concert-image-container {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.concert-image {
+  width: 300px;
+  max-height: 350px;
+  height: auto;
+}
+
+.concert-info {
+  flex: 1;
+  max-width: 400px; /* Establece el ancho máximo del contenedor */
+  overflow: hidden; /* Oculta el desbordamiento */
+  padding-left: 20px;
+  margin: 0;
+}
+
+.security {
+  overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.concert-buyTicket {
+  background-color: rgb(202, 202, 202);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.boton-compra {
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.boton-compra:hover {
+  background-color: rgb(150, 149, 149);
+}
+</style>
