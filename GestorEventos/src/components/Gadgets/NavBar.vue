@@ -10,8 +10,8 @@
           <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
           <li><a href="/">Home</a></li>
           <li><a href="/concerts">Explorar Eventos</a></li>
-          <li><a href="#">Iniciar Sesion</a></li>
-          <li><button @click="openSearchModal">Buscar</button></li>
+          <li><a href="/register">Registrarse</a></li>
+          <li><button class="search-button" @click="openSearchModal"></button></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
       </div>

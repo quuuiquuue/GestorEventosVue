@@ -4,13 +4,13 @@
 
 #app {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   /* Establece la altura al 100% del viewport height */
   margin: 0;
   padding: 0 20px;
   /* Agrega otros estilos según sea necesario */
-  /* Oculta la barra de desplazamiento horizontal */
-  overflow-x: hidden;
+  /* Oculta la barra de desplazamiento en ambos ejes */
+  overflow: hidden;
 }
 
 .kode-mono{
@@ -26,7 +26,6 @@
   
 }
 
-
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -36,6 +35,19 @@
   text-align: left;
   overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
 
+}
+
+.search-button {
+  width: 30px; /* Ancho del botón */
+  height: 30px; /* Altura del botón */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/49/49116.png'); /* Ruta de la imagen de la lupa */
+  background-size: cover; /* Ajusta la imagen para que cubra el fondo del botón */
+  background-color: white;
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Establece el cursor como puntero */
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 .concert-list {
@@ -102,7 +114,6 @@
   background-color: #f0f0f0;
 }
 
-
 nav{
   
   z-index: 99;
@@ -132,6 +143,7 @@ nav .wrapper{
 }
 .nav-links li{
   list-style: none;
+  text-align: center;
 }
 .nav-links li a{
   color: black;
@@ -148,23 +160,6 @@ nav .wrapper{
 .nav-links .mobile-item{
   display: none;
 }
-.nav-links .drop-menu{
-  position: absolute;
-  background: #242526;
-  width: 180px;
-  line-height: 45px;
-  top: 85px;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-.nav-links li:hover .drop-menu,
-.nav-links li:hover .mega-box{
-  transition: all 0.3s ease;
-  top: 70px;
-  opacity: 1;
-  visibility: visible;
-}
 .drop-menu li a{
   width: 100%;
   display: block;
@@ -180,18 +175,6 @@ nav .wrapper{
   top: 85px;
   opacity: 0;
   visibility: hidden;
-}
-.mega-box .content{
-  background: #242526;
-  padding: 25px 20px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-.mega-box .content .row{
-  width: calc(25% - 30px);
-  line-height: 45px;
 }
 .content .row img{
   width: 100%;
@@ -369,6 +352,7 @@ nav input{
   font-size: 45px;
   font-weight: 600;
 }
+
 
 
 .footer {
