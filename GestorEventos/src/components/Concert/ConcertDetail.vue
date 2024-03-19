@@ -12,7 +12,10 @@
         <div class="concert-buyTicket">
         <span style="font-size: 25px; font-weight: bold;">{{ concert.ticketPrice }} €</span>
         <small class="kode-mono">Este es el precio que pagarás. Sin sorpresas de última hora.</small>
-        <button class="boton-compra" @click="buyTicket" :disabled="ticketPurchased">Comprar</button>
+        <div style="display: inline;">
+          <button class="boton-compra" @click="addToCart(product)">Agregar al carrito</button>
+          <button class="boton-compra" @click="buyTicket" :disabled="ticketPurchased">Comprar</button>
+        </div>
         <p v-if="ticketPurchased">¡Entrada comprada con éxito!</p>
         <p v-if="error">{{ error }}</p>
         </div>
@@ -31,12 +34,14 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
 const concertId = ref(router.currentRoute.value.params.id);
 const concert = ref(null);
 const error = ref('');
 const ticketPurchased = ref(false);
+
 
 const loadConcertDetail = async () => {
   try {
@@ -77,6 +82,14 @@ const buyTicket = async () => {
       error.value = 'No se pudo comprar el ticket';
     }
   };
+
+const store = useStore();
+
+const addToCart = (product) => {
+  store.commit('addToCart', product);
+};
+
+
 </script>
 
 <style scoped>
