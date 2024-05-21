@@ -57,7 +57,7 @@ const loadConcertDetail = async () => {
   }
 };
 
-onMounted(loadConcertDetail);
+onMounted(loadConcertDetail, window.scrollTo(0, 0));
 
   
 const buyTicket = async () => {
