@@ -12,7 +12,6 @@
   import Footer from '@/components/Gadgets/Footer.vue';
   
   const router = useRouter();
-  const concertId = ref(router.currentRoute.value.params.id);
   const concert = ref(null);
   const error = ref('');
   const ticketPurchased = ref(false);
@@ -32,7 +31,6 @@
     }
   };
 
-  
   
 
   
